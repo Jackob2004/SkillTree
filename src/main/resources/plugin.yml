@@ -1,0 +1,16 @@
+name: SkillTree
+version: '${project.version}'
+main: me.shadow_warrior_.skilltree.SkillTree
+api-version: 1.16
+authors: [ shadow_warrior_ ]
+description: Skill tree for survival
+commands:
+  score:
+    description: how many points you have
+
+  setscore:
+    description: sets score
+  punkty:
+    description: gets points
+  ulepszenia:
+    description: Ulepsz swoja postac
