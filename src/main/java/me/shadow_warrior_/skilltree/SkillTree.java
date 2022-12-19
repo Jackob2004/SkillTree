@@ -237,4 +237,29 @@ public final class SkillTree extends JavaPlugin implements Listener {
 
 
     }
+    */
+            public void addTreasure(Material material, Player player){
+        ItemStack  item  = new ItemStack(material);
+        player.getInventory().addItem(item);
+        player.sendMessage(ChatColor.GREEN  +  "Znalazles:  " +  item);
+        player.playSound(player.getLocation(), Sound.ANVIL_USE,1,1);
+    }
+
+    @EventHandler
+    public void onBlockBreak(BlockBreakEvent e){
+        Player p  =  e.getPlayer();
+        if(!p.hasPermission("poszukiwacz.1")) return;
+
+        int random = (int) (Math.random()*99);
+
+        if(random==1) addTreasure(Material.DIAMOND,p);
+
+        else if(random==0) addTreasure(Material.EMERALD,p);
+
+        else if(random<=6 && random>1) addTreasure(Material.IRON_INGOT,p);
+
+        else if(random<=11 && random>6) addTreasure(Material.GOLD_INGOT,p);
+
+    }
+        */
 }
